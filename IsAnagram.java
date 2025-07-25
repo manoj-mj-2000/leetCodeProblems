@@ -15,11 +15,12 @@ public class IsAnagram {
 	}
 	
 	public static boolean isAnagram(String s, String t) {
-		
-		if(s.length() != t.length())
+		int sLen = s.length();
+        	int tLen = t.length();
+		if(sLen != tLen)
 			return false;
 		int count[] = new int[26];
-		for(int i=0;i<s.length(); i++) {
+		for(int i=0;i<sLen; i++) {
 			count[s.charAt(i) - 'a']++;
 			count[t.charAt(i) - 'a']--;
 		}
