@@ -12,16 +12,25 @@ public class ContainsDuplicate {
 		System.out.println(res);
 	}
 
-	public static boolean hasDuplicate(int[] nums) {
-        HashSet<Integer> set = new HashSet();
-        for(int i=0;i<nums.length;i++){
-            if(set.contains(nums[i])){
-                return true;
-            }
-            else{
-                set.add(nums[i]);
-            }
+/** Better version
+	HashSet<Integer> set = new HashSet(nums.length+1);
+        for(int num : nums){
+           if(!set.add(num))
+        	   return true;
         }
         return false;
+*/
+	
+	public static boolean hasDuplicate(int[] nums) {
+	        HashSet<Integer> set = new HashSet();
+	        for(int i=0;i<nums.length;i++){
+	            if(set.contains(nums[i])){
+	                return true;
+	            }
+	            else{
+	                set.add(nums[i]);
+	            }
+	        }
+	        return false;
     }
 }
